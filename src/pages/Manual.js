@@ -39,10 +39,10 @@ import axios from 'axios';
       });
     const handleSubmit = async() => {
     
-    const REGISTER_URL = "https://alchemy007-fkgrid.zabardastdeals.in/store/warranty";
+    const REGISTER_URL = "/store/warranty";
     const response = await axios.post(REGISTER_URL,JSON.stringify({order_id,prod_name,brand,img_url,prod_url,serial_no,purch_date,warranty_days,email}),
     {
-headers:{'Content-Type':'application/json'},
+headers:{'Content-Type':'application/json','Access-Control-Allow-Origin': '*'},
     }
     
     );

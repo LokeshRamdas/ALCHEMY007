@@ -11,10 +11,9 @@ function MyVerticallyCenteredModal(props) {
  // const [values,setValues] = useState({});
   const handleSubmit1 = async() => {
     console.log("hello")
-  var REGISTER_URL = "https://alchemy007-fkgrid.zabardastdeals.in/getinfo/orderid/"+orderid;
-  const response = await axios.get(REGISTER_URL)
+  var REGISTER_URL = "/getinfo/orderid/"+orderid
+  const response = await axios.get(REGISTER_URL,{'Access-Control-Allow-Origin': '*'})
   console.log(response.data);
-  //setValues(response.data)
   props.values(response.data)
 
 }

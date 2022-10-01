@@ -3,7 +3,6 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios"
-import Manual from "./Manual"
 
   const App = (props) => {
     const [show, setShow] = useState(false);
@@ -13,16 +12,17 @@ import Manual from "./Manual"
     const [selectedFile, setSelectedFile] = React.useState(null);
   
     const handleSubmit = async (event) => {
-     // event.preventDefault()
      console.log("hehhdd");
       const formData = new FormData();
       formData.append("fkinvoice", selectedFile);
       try {
         const response = await axios({
           method: "post",
-          url: "https://flaskfkapp.azurewebsites.net/uploadfkinvoice",
+          url: "/uploadfkinvoice",
           data: formData,
-          headers: { "Content-Type": "multipart/form-data" },
+          headers: { "Content-Type": "multipart/form-data",
+          'Access-Control-Allow-Origin': '*'}
+      
         });
         console.log(response);
         handleClose();
