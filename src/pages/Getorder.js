@@ -3,9 +3,7 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from 'axios';
-
-
-
+import { fontStyle } from "@mui/system";
 function MyVerticallyCenteredModal(props) {
   const [orderid,setorderid] = useState("");
  // const [values,setValues] = useState({});
@@ -19,7 +17,6 @@ function MyVerticallyCenteredModal(props) {
 }
  
   return (
-
     <Modal
       {...props}
       size="lg"
@@ -57,7 +54,8 @@ const App = () => {
 
   return (
     <>
-    <h2>Enter the OrderId to retrieve the NFT details</h2>
+   <div style={{backgroundColor:'cornsilk', width:'1400px',height:'700px'}}>
+    <h2 style={{fontFamily: 'garamond',fontWeight:'bold'}}>Enter the OrderId to retrieve the NFT details</h2>
       <Button variant="primary" onClick={() => {setModalShow(true);}}>
         Get Warranty details
       </Button>
@@ -69,11 +67,19 @@ const App = () => {
       />
       <div>
         {
-          (values.flag===1)?<><h3>PRODUCT NAME:{values.name} <br/> ORDERID:{values.description} <br/> OWNERS EMAIL:{values.owner_email} <br/></h3> <a href = {values.opensea} target = "_blank">OPENSEA LINK</a></>:
+          (values.flag===1)?<><br/><h3 style={{fontFamily: 'georgia',fontSize:'25px',fontWeight:'bold'}}>PRODUCT NAME:{values.name} <br/><br/> ORDERID:{values.description} <br/><br/> OWNERS EMAIL:{values.owner_email} <br/><br/></h3> <a style={{ backgroundColor: 'white',
+          color: 'black',
+           border: '2px solid blue',
+           padding: '10px 20px',
+           textAlign: 'center',
+           textDecoration: 'none',
+           display: 'inline-block'}} href = {values.opensea} target = "_blank">OPENSEA LINK</a></>:
         (values.flag===0)?<h1>NOT VALID</h1>:<h1></h1>
 
         }
       </div>
+    </div>
+   
     </>
   );
 }

@@ -105,7 +105,7 @@ headers:{'Content-Type':'application/json','Access-Control-Allow-Origin': '*'},
   </div>
   <div className="form-group">
     <label htmlFor="warranty_days">Warranty Days</label>
-    <input type="number" className="form-control" id="warranty_days" name="warranty_days" placeholder="Enter the warranty days" min="1" max="365" value={warranty_days}
+    <input type="number" min="1" max="365" className="form-control" id="warranty_days" name="warranty_days" placeholder="Enter the warranty days" value={warranty_days}
         onChange={(e)=>setwarranty_days(e.target.value)}></input>
   </div>
   <div className="form-group">
@@ -123,12 +123,23 @@ headers:{'Content-Type':'application/json','Access-Control-Allow-Origin': '*'},
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
-          <Button variant="primary" className="btn btn-primary" onClick={handleSubmit}>Register for warranty</Button>
+          <Button variant="primary" className="btn btn-primary" onClick={handleSubmit}>Register for warranty</Button><br/><br/>
         </Modal.Footer>
       </Modal>
+     
+
+    
+ 
 <div>
   {
-(values.db_flag===1)?<><h3>SUCCESS.... NFT WILL BE READY IN A MOMENT<br/></h3> <a href = {values.result} target = "_blank">OPENSEA LINK</a></>:
+(values.db_flag===1)?<><br/><br/><h3 style={{fontFamily: 'garamond',fontSize:'20px'}}>SUCCESS.... NFT WILL BE READY IN A MOMENT<br/></h3> <a style={{ backgroundColor: 'white',
+color: 'black',
+ border: '2px solid orange',
+ padding: '10px 20px',
+ textAlign: 'center',
+ textDecoration: 'none',
+ display: 'inline-block'
+}}href = {values.result} target = "_blank">OPENSEA LINK</a><br/><br/></>:
         (values.db_flag===0)?<h1>NOT VALID</h1>:<h1></h1>
   }
 </div>

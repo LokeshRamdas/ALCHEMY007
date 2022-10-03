@@ -7,16 +7,19 @@ export default function Home() {
   return(
 
   <>
-  <div>
-<h2>Register for warranty manually</h2>
+<div style={{backgroundColor:'cornsilk', width:'1400px',height:'700px'}}>
+<div>
+<br/><h3 style={{fontFamily: 'georgia',fontSize:'25px',fontWeight:'bold'}}>Register for warranty manually</h3>
   <Manual values = {ivalues}/>
   </div>
 
   <div>
-<h2>Register Warranty by uploading the Flipkart Invoice</h2>    
+<h3 style={{fontFamily: 'georgia',fontSize:'25px',fontWeight:'bold'}}>Register Warranty by uploading the Flipkart Invoice</h3>    
   <Auto setter={(i)=>{isetValues(i)}}/>
 {console.log(ivalues)}
   </div>
+</div>
+  
 
   </>
   );
