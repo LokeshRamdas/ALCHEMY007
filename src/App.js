@@ -9,7 +9,6 @@ import Getorder from "./pages/Getorder"
 function App() {
   return (
     <>
-    {/* //bye */}
       <Navbar />
       <div className="container">
         <Routes>
